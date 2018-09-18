@@ -1,5 +1,5 @@
-{% set version = "0.14.3" %}
-{% set sha256 = "e7adde87955240b5963c808e77d8166fe85b3068d30d7aac08aca835047f6514" %}
+{% set version = "0.14.6" %}
+{% set sha256 = "cf94be8d3ce217bd585162686c88f056a25a798946a4e52c6bff59215ee41499" %}
 
 package:
   name: bioconda-utils
