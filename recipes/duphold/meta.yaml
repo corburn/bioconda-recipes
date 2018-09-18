@@ -1,18 +1,17 @@
-{% set name = "duphold" %}
 {% set version = "0.0.3" %}
-{% set sha256hash = "956078be7b3d618f4092bf71b5da5fafbe335ccbe40070ceced3bd80fb5b5ac8" %}
+{% set sha256 = "956078be7b3d618f4092bf71b5da5fafbe335ccbe40070ceced3bd80fb5b5ac8" %}
 
 package:
-  name: {{ name|lower }}
-  version: {{ version }}
+  name: duphold
+  version: '{{ version }}'
 
 source:
   url: https://github.com/brentp/duphold/releases/download/v{{ version }}/duphold
-  sha256: {{ sha256hash }}
+  sha256: '{{ sha256 }}'
 
 build:
-  number: 0
-  skip: True  # [osx]
+  number: 1
+  skip: true  # [osx]
 
 requirements:
   run:
@@ -26,4 +25,6 @@ test:
 about:
   home: https://github.com/brentp/duphold
   license: MIT
-  summary: SV callers like lumpy look at split-reads and pair distances to find structural variants. This tool is a fast way to add depth information to those calls.
+  license_family: MIT
+  summary: SV callers like lumpy look at split-reads and pair distances to find structural variants. This tool is a fast way
+    to add depth information to those calls.
