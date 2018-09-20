@@ -1,45 +1,43 @@
 {% set version = "0.8.1" %}
-
-about:
-    license: Apache 2
-    summary: ECTyper is a python program for serotyping E. coli genomes
-    author: Chad Laing, Camille La Rose, Sam Sung
-    home: https://github.com/phac-nml/ecoli_serotyping
+{% set sha256 = "7328c3c5e9c92c3626e762e87232358af2433f675b8c8ca4a75868f388e37750" %}
 
 package:
-    name: ectyper
-    version: {{ version }}
+  name: ectyper
+  version: '{{ version }}'
 
 source:
-    url: https://github.com/phac-nml/ecoli_serotyping/archive/v{{ version }}.tar.gz
-    sha256: 7328c3c5e9c92c3626e762e87232358af2433f675b8c8ca4a75868f388e37750
+  url: https://github.com/phac-nml/ecoli_serotyping/archive/v{{ version }}.tar.gz
+  sha256: '{{ sha256 }}'
 
 build:
-    skip: True # [py27, py34]
-    number: 7
-    script: python setup.py install
+  skip: true   # [py27, py34]
+  number: 8
+  script: python setup.py install
 
 requirements:
-    build:
-       - python
-
-    run:
-       - python >=3.5
-       - pytest >=3.5
-       - pandas 0.23.1.*
-       - samtools 1.8.*
-       - bowtie2 2.3.4.1.*
-       - mash 2.0.*
-       - bcftools 1.8.*
-       - biopython 1.70.*
-       - blast 2.7.1.*
-       - seqtk 1.2.*
+  build:
+    - python
+  run:
+    - python >=3.5
+    - pytest >=3.5
+    - pandas 0.23.1.*
+    - samtools 1.8.*
+    - bowtie2 2.3.4.1.*
+    - mash 2.0.*
+    - bcftools 1.8.*
+    - biopython 1.70.*
+    - blast 2.7.1.*
+    - seqtk 1.2.*
 
 test:
-    import:
-       - ectyper
-    test:
-       - "ectyper --help"
+  import:
+    - ectyper
+  test:
+    - ectyper --help
 
-
-
+about:
+  author: Chad Laing, Camille La Rose, Sam Sung
+  home: https://github.com/phac-nml/ecoli_serotyping
+  license: Apache-2.0
+  license_family: Apache
+  summary: ECTyper is a python program for serotyping E. coli genomes
