@@ -1,17 +1,16 @@
-{% set version = "0.8.7" %}
-{% set name = "abricate" %}
-{% set sha256 = "6eb3f8e77c6bcbeb30a1b36ac5d65f44cb53f26935373f56ec83a611b378be83" %}
+{% set version = "0.8.9" %}
+{% set sha256 = "f4db29aa09748117340623a299b44728b22e85bfde4c6ede716ffd5540fdb537" %}
 
 package:
-  name: {{ name }}
-  version: {{ version }}
+  name: abricate
+  version: '{{ version }}'
+
+source:
+  url: https://github.com/tseemann/abricate/archive/v{{ version }}.tar.gz
+  sha256: '{{ sha256 }}'
 
 build:
   number: 0
-
-source:
-  url: https://github.com/tseemann/{{ name }}/archive/v{{ version }}.tar.gz
-  sha256: {{ sha256 }}
 
 requirements:
   host:
@@ -26,7 +25,6 @@ requirements:
     - unzip
     - emboss
     - entrez-direct
-
   run:
     - perl-bioperl >=1.7
     - perl-file-slurp
@@ -48,6 +46,7 @@ test:
 
 about:
   home: https://github.com/tseemann/abricate
-  license: GPL2
+  license: GPL-2.0
+  license_family: GPL
   license_file: LICENSE
   summary: Mass screening of contigs for antibiotic resistance genes
