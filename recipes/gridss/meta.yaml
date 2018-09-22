@@ -1,5 +1,5 @@
-{% set version = "1.9.0" %}
-{% set sha256 = "ec608fb1a9e487aafccf4ddafe3f6bf2472963783b85cae8b486f83dfddfd6bb" %}
+{% set version = "2.0.0" %}
+{% set sha256 = "f3a86c5f6c07fdb183ab2b68a679518fb3c264bf2ef8f030e4c080bdf1a05907" %}
 
 package:
   name: gridss
