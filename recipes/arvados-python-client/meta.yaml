@@ -1,16 +1,17 @@
-{% set version="0.1.20171211211613" %}
+{% set version = "1.2.0" %}
+{% set sha256 = "383f588f195ac646a7b66112bf63783b77fed9c42b6739f7675da0688e7ae1fb" %}
 
 package:
   name: arvados-python-client
-  version: {{ version }}
+  version: '{{ version }}'
 
 source:
   url: https://pypi.io/packages/source/a/arvados-python-client/arvados-python-client-{{ version }}.tar.gz
-  md5: 192786588a3d82957c6ee3ee7f05574f
+  sha256: '{{ sha256 }}'
 
 build:
-  number: 1
-  skip: True # [not py27]
+  number: 0
+  skip: true # [not py27]
 
 requirements:
   host:
@@ -27,7 +28,6 @@ requirements:
     - rsa
     - urllib3 >1.12
     - ws4py <0.4,>=0.3.5
-
   run:
     - python
     - ciso8601 <=1.0.4,>=1.0.0
@@ -47,8 +47,9 @@ test:
     - arvados
 
 about:
-  home: https://github.com/curoverse/arvados/tree/master/sdk/python
+  home: https://github.com/curoverse/arvados
   license: Apache License 2.0
+  license_family: Apache
   summary: Python API for Arvados, an open source platform for managing and analyzing biomedical big data
 
 extra:
