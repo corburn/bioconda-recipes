@@ -1,16 +1,17 @@
-{% set version = "5.2.7.47" %}
+{% set version = "5.2.9.122" %}
+{% set sha256 = "3edd036cb5906548f2698d8d22f59e9ddb0bca7c3d8415eb1aee01a5cc777d4a" %}
 
 package:
   name: pisces
-  version: {{ version }}
+  version: '{{ version }}'
 
 source:
   url: https://github.com/Illumina/Pisces/releases/download/v{{ version }}/Pisces_{{ version }}.tar.gz
-  sha256: 69f8e2c08c09b9d75a346474305e5cc4adc4713b11f788398a516fa2ab7e834f
+  sha256: '{{ sha256 }}'
 
 build:
-  number: 2
-  skip: False
+  number: 0
+  skip: false
 
 requirements:
   build:
@@ -26,6 +27,7 @@ test:
     #- pisces_vqr -h
 
 about:
-  home: "https://github.com/Illumina/Pisces"
-  license: GPLv3
-  summary: "Somatic and germline variant caller for amplicon data. Recommended caller for tumor-only workflows."
+  home: https://github.com/Illumina/Pisces
+  license: GPL-3.0
+  license_family: GPL
+  summary: Somatic and germline variant caller for amplicon data. Recommended caller for tumor-only workflows.
