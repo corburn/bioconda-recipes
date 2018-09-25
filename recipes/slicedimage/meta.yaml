@@ -1,12 +1,13 @@
-{% set SLICEDIMAGE_VERSION = "0.0.7" %}
+{% set version = "0.1.0" %}
+{% set sha256 = "99f78d6191bb0fbdd0bd74cefb5d2ce2d1e912e1afd2537560c0ebd0b6e0d4b6" %}
 
 package:
   name: slicedimage
-  version: {{ SLICEDIMAGE_VERSION }}
+  version: '{{ version }}'
 
 source:
-  url:  https://github.com/spacetx/slicedimage/archive/{{ SLICEDIMAGE_VERSION }}.zip
-  sha1: 106088d04cbe1fa93ebd1d98156eff8fa5942faa
+  url: https://github.com/spacetx/slicedimage/archive/{{ version }}.tar.gz
+  sha256: '{{ sha256 }}'
 
 build:
   noarch: python
@@ -32,4 +33,5 @@ test:
 about:
   home: https://github.com/spacetx/slicedimage
   license: MIT
+  license_family: MIT
   summary: sliced imaging data
