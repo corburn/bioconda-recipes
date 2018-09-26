@@ -1,16 +1,16 @@
-{% set name = "r-sartools" %}
 {% set version = "1.6.5" %}
+{% set sha256 = "d98fe785e51856b15dc58a6c3d8cc81495dc1d1fe46e10319b0fc034e47fa1c0" %}
 
 package:
-  name: {{ name|lower }}
-  version: {{ version }}
+  name: r-sartools
+  version: '{{ version }}'
 
 source:
   url: https://github.com/PF2-pasteur-fr/SARTools/archive/v{{ version }}.tar.gz
-  sha256: d98fe785e51856b15dc58a6c3d8cc81495dc1d1fe46e10319b0fc034e47fa1c0
+  sha256: '{{ sha256 }}'
 
 build:
-  number: 1
+  number: 2
   rpaths:
     - lib/R/lib/
     - lib/
@@ -24,7 +24,6 @@ requirements:
     - r-rmarkdown
     - r-bit64
     - r-blob
-
   run:
     - r-base >=3.3.0
     - r-knitr
@@ -42,7 +41,9 @@ test:
 about:
   home: https://github.com/PF2-pasteur-fr/SARTools
   license: GPL-2
-  summary: SARTools provides R tools and an environment for the statistical analysis of RNA-Seq projects load and clean data, produce figures, perform statistical analysis/testing with DESeq2 or edgeR, export results and create final report.
+  license_family: GPL
+  summary: SARTools provides R tools and an environment for the statistical analysis of RNA-Seq projects load and clean data,
+    produce figures, perform statistical analysis/testing with DESeq2 or edgeR, export results and create final report.
 
 extra:
   identifiers:
