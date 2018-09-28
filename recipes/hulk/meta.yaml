@@ -1,15 +1,16 @@
-{% set version = "0.0.2" %}
+{% set version = "0.1.0" %}
+{% set sha256 = "6ce970a030f419d2355c6f989e8556aa9be886fde31c9cfa6747ebe60dbfb200" %}
 
 package:
   name: hulk
-  version: {{ version }}
+  version: '{{ version }}'
 
 source:
   url: https://github.com/will-rowe/hulk/archive/{{ version }}.tar.gz
-  sha256: fd55b41c0bc363ab46ae636c20109abb48e3992b8d5acd2e97df04353bea40bb
+  sha256: '{{ sha256 }}'
 
 build:
-  number: 1
+  number: 0
 
 requirements:
   build:
@@ -26,5 +27,5 @@ test:
 
 about:
   home: https://github.com/will-rowe/hulk
-  license: MIT
+  license: NOASSERTION
   summary: Histosketching Using Little Kmers.
