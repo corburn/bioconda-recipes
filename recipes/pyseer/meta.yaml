@@ -1,13 +1,13 @@
-{% set version = "1.1.1" %}
+{% set version = "1.1.2" %}
+{% set sha256 = "04ca9bf8dc96749be5b2f95b40c95b7ac56e832d62fed910aa4d4ba1ac465ea1" %}
 
 package:
   name: pyseer
-  version: {{ version }}
+  version: '{{ version }}'
 
 source:
   url: https://pypi.io/packages/source/p/pyseer/pyseer-{{ version }}.tar.gz
-  sha256: df7c56713ccab2356929dee1e089bb06a1f61ebd64c01d9d9d9cd33526122b25
-
+  sha256: '{{ sha256 }}'
 
 build:
   number: 0
@@ -24,7 +24,6 @@ requirements:
   host:
     - python
     - pip
-
   run:
     - python
     - numpy
@@ -47,7 +46,6 @@ test:
     - pyseer
     - pyseer.fastlmm
     - pyseer.kmer_mapping
-
   commands:
     - pyseer --help
     - square_mash --help
@@ -58,5 +56,5 @@ test:
 about:
   home: https://github.com/mgalardini/pyseer
   license: Apache-2.0
-  license_family: APACHE
-  summary: 'Sequence Elements Enrichment Analysis (SEER), python implementation'
+  license_family: Apache
+  summary: Sequence Elements Enrichment Analysis (SEER), python implementation
