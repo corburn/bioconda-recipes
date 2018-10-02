@@ -1,15 +1,18 @@
+{% set version = "0.2.7" %}
+{% set sha256 = "9ba445de14976737c5c61a0e21fe6f88d642b5f297f6b8cb3fd1f6e56e2121a7" %}
+
 package:
   name: r-bcbiornaseq
   # Note that conda versions cannot contain -, so any -'s in the version have
   # been replaced with _'s.
-  version: "0.2.7"
+  version: '{{ version }}'
 
 source:
-  url: https://github.com/hbc/bcbioRNASeq/archive/a693711.tar.gz
-  sha256: 4003d4bec4cd584115596a64afbedf173a229b9b5c5ee0553aa93160682aa7db
+  url: https://github.com/hbc/bcbioRNASeq/archive/v{{ version }}.tar.gz
+  sha256: '{{ sha256 }}'
 
 build:
-  number: 0
+  number: 1
   # This is required to make R link correctly on Linux.
   rpaths:
     - lib/R/lib/
@@ -17,9 +20,9 @@ build:
 
 requirements:
   host:
-    - 'r-base >=3.4.0'
+    - r-base >=3.4.0
     - bioconductor-summarizedexperiment
-    - 'r-bcbiobase >=0.2.17'
+    - r-bcbiobase >=0.2.17
     - bioconductor-deseq2
     - bioconductor-degreport
     - bioconductor-edger
@@ -29,11 +32,10 @@ requirements:
     - bioconductor-vsn
     - r-rmarkdown
     - r-tidyverse
-
   run:
-    - 'r-base >=3.4.0'
+    - r-base >=3.4.0
     - bioconductor-summarizedexperiment
-    - 'r-bcbiobase >=0.2.17'
+    - r-bcbiobase >=0.2.17
     - bioconductor-deseq2
     - bioconductor-degreport
     - bioconductor-edger
@@ -43,7 +45,6 @@ requirements:
     - bioconductor-vsn
     - r-rmarkdown
     - r-tidyverse
-
 
 test:
   commands:
@@ -52,4 +53,5 @@ test:
 about:
   home: https://github.com/hbc/bcbioRNASeq
   license: MIT
+  license_family: MIT
   summary: Quality control and differential expression for bcbio RNA-seq experiments.
