@@ -1,20 +1,20 @@
-{% set version = "0.1.2018.08.28" %}
-{% set revision = "01a688" %}
-{% set hash = "29f5983cccf762a207f4e68d81a365a4279d300aa6b99a4d2399cb5fffbb1ed6" %}
+{% set version = "1.0a" %}
+{% set sha256 = "7356615d9ad365d10f01dfca4fad456cfc238a106d635dda5a4a143386bbefa0" %}
 
 package:
   name: smcounter2
-  version: {{ version }}
-build:
-  number: 0
-  skip: True # [not py27]
+  version: '{{ version }}'
 
 source:
-  url: https://github.com/qiaseq/qiaseq-smcounter-v2/archive/{{ revision }}.tar.gz
-  sha256: {{ hash }}
+  url: https://github.com/qiaseq/qiaseq-smcounter-v2/archive/v{{ version }}.tar.gz
+  sha256: '{{ sha256 }}'
   patches:
     - run-import.patch
     - get_pvalue-input.patch
+
+build:
+  number: 0
+  skip: true # [not py27]
 
 requirements:
   host:
@@ -39,4 +39,5 @@ test:
 about:
   home: https://github.com/qiaseq/qiaseq-smcounter-v2
   license: MIT
+  license_family: MIT
   summary: 'smCounter2: an accurate low-frequency variant caller for targeted sequencing data with unique molecular identifiers'
