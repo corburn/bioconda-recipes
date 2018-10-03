@@ -1,13 +1,16 @@
+{% set version = "1.4.1" %}
+{% set sha256 = "dc898f0b9f6491a69521bef82306d950f16566e4d0d6b3809b11725f707ba133" %}
+
 package:
   name: basic
-  version: "1.4.1"
+  version: '{{ version }}'
 
 source:
-  url: https://github.com/akds/BASIC/archive/v1.4.1.tar.gz
-  sha256: dc898f0b9f6491a69521bef82306d950f16566e4d0d6b3809b11725f707ba133
+  url: https://github.com/akds/BASIC/archive/v{{ version }}.tar.gz
+  sha256: '{{ sha256 }}'
 
 build:
-  number: 0
+  number: 1
   noarch: python
 
 requirements:
@@ -25,6 +28,6 @@ test:
 about:
   home: http://ttic.uchicago.edu/~aakhan/BASIC/
   license: MIT
-  summary: >
-    BASIC is a semi-de novo assembly method for assembling BCR and TCR genes 
-    from single cell RNA-seq data.
+  license_family: MIT
+  summary: BASIC is a semi-de novo assembly method for assembling BCR and TCR genes  from single cell RNA-seq data.
+  dev_url: https://github.com/akds/BASIC
