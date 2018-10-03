@@ -1,50 +1,38 @@
+{% set version = "0.4.0" %}
+{% set sha256 = "13c715f577034c1d217c7017c4e7be2d11334b52b6c7c9bb888e69c5eae9c185" %}
+
 package:
   name: svtools
-  version: "0.3.2"
+  version: '{{ version }}'
 
 source:
-  url: https://pypi.python.org/packages/eb/cb/c5acc40e7ea2f49d75a593d276832ed08aff2be9b4e73d1639f9dabbef79/svtools-0.3.2.tar.gz
-  md5: 8b5569bf91b33fa2960354afac92f4c7
+  url: https://github.com/hall-lab/svtools/archive/v{{ version }}.tar.gz
+  sha256: '{{ sha256 }}'
 
 build:
-  number: 2
-  skip: True # [not py27 ]
-  preserve_egg_dir: True
-  entry_points:
-    - svtools=svtools.cli:main
-  number: 2
+  number: 0
+  skip: true # [not py27 or osx]
 
 requirements:
   host:
     - python
-    - pysam >=0.8.1
-    - numpy
-    - scipy
-    - statsmodels
-    - pandas
     - setuptools
-
   run:
     - python
-    - pysam >=0.8.1
-    - numpy
-    - scipy
-    - statsmodels
-    - pandas
 
 test:
-  imports:
-    - svtools
-    - svtools.vcf
-
   commands:
-    - svtools --help
-    - svtools --version
-    - create_coordinates --help
+    # You can put test commands to be run here.  Use this to test that the
+    # entry points work.
+    - vcftobedpe -h
+  # You can also put a file called run_test.py in the recipe that will be run
+  # at test time.
 
 about:
   home: https://github.com/hall-lab/svtools
-  license: MIT License
-  summary: 'Tools for processing and analyzing structural variants'
+  license: MIT
   license_family: MIT
-
+  summary: Tools for processing and analyzing structural variants.
+# See
+# http://docs.continuum.io/conda/build.html for
+# more information about meta.yaml
