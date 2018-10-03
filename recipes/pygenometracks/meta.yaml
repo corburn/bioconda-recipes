@@ -1,14 +1,17 @@
+{% set version = "2.1" %}
+{% set sha256 = "ee998574c74d5176039eea35da8ab7f71d05c61e7a75421905d59a3336d301d7" %}
+
 package:
   name: pygenometracks
-  version: 2.0
+  version: '{{ version }}'
 
 source:
-  url: https://github.com/deeptools/pyGenomeTracks/archive/2.0.tar.gz
-  sha256: 9fbcf699eeaa33f056ec97f13d4f1e3b3079050f8f280a90ba9dd866c350adce
+  url: https://github.com/deeptools/pyGenomeTracks/archive/{{ version }}.tar.gz
+  sha256: '{{ sha256 }}'
 
 build:
-  number: 2
-  skip: True  # [py3k]
+  number: 0
+  skip: true  # [py3k]
 
 requirements:
   host:
@@ -38,8 +41,9 @@ test:
     - pygenometracks
 
 about:
-  home: https://github.com/deeptools/pyGenomeTracks/
-  license: GPL3
+  home: https://github.com/deeptools/pyGenomeTracks
+  license: GPL-3.0
+  license_family: GPL
   summary: Standalone program and library to plot beautiful genome browser tracks.
 
 extra:
