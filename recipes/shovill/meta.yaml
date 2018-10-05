@@ -1,17 +1,16 @@
-{% set name = "shovill" %}
-{% set version = "1.0.1" %}
-{% set sha256 = "3985a1381a009d2335645627c14301395ab82f0ad6a7f48f7e1abab3303cfec9" %}
+{% set version = "1.0.3" %}
+{% set sha256 = "9e9238602bd1737a788872fda997ba8f58507c043a01f90cb2487284bbd3f307" %}
 
 package:
-  name: {{ name }}
-  version: {{ version }}
+  name: shovill
+  version: '{{ version }}'
+
+source:
+  url: https://github.com/tseemann/shovill/archive/v{{ version }}.tar.gz
+  sha256: '{{ sha256 }}'
 
 build:
   number: 0
-
-source:
-  url: https://github.com/tseemann/{{ name }}/archive/v{{ version }}.tar.gz
-  sha256: {{ sha256 }}
 
 requirements:
   run:
@@ -35,12 +34,13 @@ requirements:
 
 test:
   commands:
-    - "shovill --help"
-    - "shovill --version"
-    - "shovill --check"
+    - shovill --help
+    - shovill --version
+    - shovill --check
 
 about:
   home: https://github.com/tseemann/shovill
-  license: GPL2
+  license: GPL-3.0
+  license_family: GPL
   license_file: LICENSE
   summary: Microbial assembly pipeline for Illumina paired-end reads
