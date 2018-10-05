@@ -1,5 +1,5 @@
-{% set version = "0.26.0" %}
-{% set sha256 = "0f9d2edf6e59ff94bf3f58e08d37ec4623553f02aa4877de76dc8465f1101802" %}
+{% set version = "0.27.0" %}
+{% set sha256 = "d7d2de8be4f963904041229244e18abeb39f5f264ef6689e618a47a042600aea" %}
 
 package:
   name: abeona
@@ -38,7 +38,7 @@ test:
 
 about:
   home: https://github.com/winni2k/abeona
-  license: Apache Software
+  license: NOASSERTION
   license_family: Apache
   license_file: LICENSE
   summary: A simple transcriptome assembler based on kallisto and Cortex graphs.
