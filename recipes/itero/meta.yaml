@@ -1,25 +1,22 @@
-
-{% set name = "itero" %}
 {% set version = "1.1.2" %}
 {% set sha256 = "1a9ee10bfc0b1146ad83f7537ab465f3be49ba3f48b6e7b80f2690d3dcd4d371" %}
 
 package:
-  name: '{{ name }}'
+  name: itero
   version: '{{ version }}'
 
 source:
-  url: https://github.com/faircloth-lab/{{ name }}/archive/v{{ version }}.tar.gz
-  sha256: '{{sha256}}'
+  url: https://github.com/faircloth-lab/itero/archive/v{{ version }}.tar.gz
+  sha256: '{{ sha256 }}'
 
 build:
-  number: 0
-  skip: True  # [not py27]
+  number: 1
+  skip: true  # [not py27]
 
 requirements:
   host:
     - python
     - setuptools
-
   run:
     - python
     - nomkl
@@ -48,6 +45,8 @@ test:
 
 about:
   home: https://github.com/faircloth-lab/itero
-  summary: A pipeline for iterative, guided contig assembly that integrates spades, bwa, and samtools to produce assembled contigs.
-  license: BSD
+  license: BSD-3-Clause
+  license_family: BSD
   license_file: LICENSE
+  summary: A pipeline for iterative, guided contig assembly that integrates spades, bwa, and samtools to produce assembled
+    contigs.
