@@ -1,15 +1,16 @@
 {% set version = "0.8.3" %}
+{% set sha256 = "1a50c0e0a5a13f67758aa2c9b1daaee755f191749c7e98cef3ed9ade8ac250ce" %}
 
 package:
   name: groot
-  version: {{ version }}
+  version: '{{ version }}'
 
 source:
   url: https://github.com/will-rowe/groot/archive/{{ version }}.tar.gz
-  sha256: 1a50c0e0a5a13f67758aa2c9b1daaee755f191749c7e98cef3ed9ade8ac250ce
+  sha256: '{{ sha256 }}'
 
 build:
-  number: 1
+  number: 2
 
 requirements:
   build:
@@ -24,4 +25,5 @@ test:
 about:
   home: https://github.com/will-rowe/groot
   license: MIT
+  license_family: MIT
   summary: A tool for resistome profiling of metagenomic samples.
