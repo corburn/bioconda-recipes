@@ -1,16 +1,17 @@
-{% set version = "1.2.1" %}
+{% set version = "2.0.1" %}
+{% set sha256 = "7e68df90ef9021c6f36500919c40f7bfaaa06dfe1f160b4faff4e0a18837cd50" %}
 
 package:
   name: moff
-  version: {{ version }}
+  version: '{{ version }}'
 
 source:
   url: https://github.com/compomics/moFF/archive/{{ version }}.tar.gz
-  md5: 02cb8e42928337f27e2bf66a363991ff
+  sha256: '{{ sha256 }}'
 
 build:
-  number: 1
-  skip: True # [not py27]
+  number: 0
+  skip: true # [not py27]
 
 requirements:
   host:
@@ -22,7 +23,6 @@ requirements:
     - pymzml >0.7.7
     - mono
     - simplejson
-
   run:
     - python
     - pandas 0.20.*
@@ -35,12 +35,12 @@ requirements:
 
 test:
   commands:
-    - 'moff.py -h'
-    - 'moff_all.py -h'
-    - 'moff_mbr.py -h'
+    - moff.py -h
+    - moff_all.py -h
+    - moff_mbr.py -h
 
 about:
   home: https://github.com/compomics/moFF
-  license: Apache 2.0
+  license: NOASSERTION
   license_file: license
   summary: moFF is an OS independent tool designed to extract apex MS1 intensity using a set of identified MS2 peptides.
