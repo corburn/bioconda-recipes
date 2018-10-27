@@ -1,15 +1,16 @@
 {% set version = "1.5.7" %}
+{% set sha256 = "597fa238f6812123b715c0d324a2827910ff68e7a16e6c9e045d4e192e199fe6" %}
 
 package:
   name: vardict-java
-  version: {{ version }}
+  version: '{{ version }}'
 
 source:
   url: https://github.com/AstraZeneca-NGS/VarDictJava/releases/download/v{{ version }}/VarDict-{{ version }}.zip
-  sha256: 597fa238f6812123b715c0d324a2827910ff68e7a16e6c9e045d4e192e199fe6
+  sha256: '{{ sha256 }}'
 
 build:
-  number: 0
+  number: 1
   noarch: generic
 
 requirements:
@@ -23,4 +24,5 @@ test:
 about:
   home: https://github.com/AstraZeneca-NGS/VarDictJava
   license: MIT
+  license_family: MIT
   summary: Java port of the VarDict variant discovery program
