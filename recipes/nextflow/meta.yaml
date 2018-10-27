@@ -1,16 +1,17 @@
 {% set version = "18.10.1" %}
+{% set sha256 = "91d85e43578803ff88fd1c8d71129a1484f73b5c9f2962cc6916382c942b6602" %}
 
 package:
   name: nextflow
-  version: {{ version }}
-
-build:
-  number: 1
-  noarch: generic
+  version: '{{ version }}'
 
 source:
   url: https://www.nextflow.io/releases/v{{ version }}/nextflow
-  sha256: 91d85e43578803ff88fd1c8d71129a1484f73b5c9f2962cc6916382c942b6602
+  sha256: '{{ sha256 }}'
+
+build:
+  number: 2
+  noarch: generic
 
 requirements:
   host:
@@ -27,6 +28,7 @@ test:
     - nextflow -v
 
 about:
-  home: "https://github.com/nextflow-io/nextflow"
-  license: "GPL3"
-  summary: "A DSL for data-driven computational pipelines http://nextflow.io"
+  home: https://github.com/nextflow-io/nextflow
+  license: Apache-2.0
+  license_family: Apache
+  summary: A DSL for data-driven computational pipelines http://nextflow.io
