@@ -1,0 +1,57 @@
+{% set version = "2018_09_1" %}
+{% set sha256 = "61c14652a05a6f6b216ff099381c4dd32048861ba9d96f75a017084e81848baa" %}
+
+package:
+  name: rdkit
+  version: '{{ version }}'
+
+source:
+  url: https://github.com/rdkit/rdkit/archive/Release_{{ version }}.tar.gz
+  patches:
+    - rdpaths.patch
+    - rdconfig.patch [win]
+  sha256: '{{ sha256 }}'
+
+build:
+  number: 0
+  skip: true # [win or py3k or osx]
+
+requirements:
+  host:
+    - cmake [unix]
+    - requests
+    - boost
+    - boost >=1.48.0
+    - python
+    - numpy
+    - pillow
+    - freetype
+    - py2cairo # [linux and py2k]
+  run:
+    - python
+    - numpy
+    - boost
+
+test:
+  imports:
+    - rdkit
+    - rdkit.Avalon
+    - rdkit.Dbase
+    - rdkit.ML
+    - rdkit.RDPaths
+    - rdkit.VLib
+    - rdkit.Chem
+    - rdkit.DistanceGeometry
+    - rdkit.Numerics
+    - rdkit.RDRandom
+    - rdkit.DataManip
+    - rdkit.ForceField
+    - rdkit.RDConfig
+    - rdkit.DataStructs
+    - rdkit.Geometry
+
+about:
+  home: http://rdkit.org
+  license: NOASSERTION
+  summary: Open-Source Cheminformatics Software
+  dev_url: https://github.com/rdkit/rdkit
