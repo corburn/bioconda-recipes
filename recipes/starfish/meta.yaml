@@ -1,16 +1,17 @@
-{% set STARFISH_VERSION = "0.0.27" %}
+{% set version = "0.0.27" %}
+{% set sha256 = "02038b4531ac22f1fa21a5c43dd222b0717772e41c1502dfa3f142ef1e88ae8c" %}
 
 package:
   name: starfish
-  version: {{ STARFISH_VERSION }}
+  version: '{{ version }}'
 
 source:
-  url: https://github.com/spacetx/starfish/archive/{{ STARFISH_VERSION }}.zip
-  sha256: 0502319556f699e82758fb7cf128f8ec7d2b3ca1356b9386e9e8ab55caf0e1da
+  url: https://github.com/spacetx/starfish/archive/{{ version }}.tar.gz
+  sha256: '{{ sha256 }}'
 
 build:
   noarch: python
-  number: 0
+  number: 1
 
 requirements:
   host:
@@ -45,4 +46,5 @@ test:
 about:
   home: https://github.com/spacetx/starfish
   license: MIT
+  license_family: MIT
   summary: standardized analysis pipeline for image-based transcriptomics
