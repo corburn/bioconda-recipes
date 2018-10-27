@@ -1,16 +1,20 @@
+{% set version = "0.9.8" %}
+{% set sha256 = "af34016b763fbf7f05339be13c8002ec2fb164647389ff35de819412c3be6a24" %}
+
 package:
   name: gseapy
-  version: "0.9.8"
+  version: '{{ version }}'
 
 source:
-  url: https://files.pythonhosted.org/packages/6f/1c/ed8881ad80e7c1ff0e21a1ee73ea75b784524493ecd5e720323f619211c8/gseapy-0.9.8.tar.gz
-  sha256: af34016b763fbf7f05339be13c8002ec2fb164647389ff35de819412c3be6a24
+  url: https://files.pythonhosted.org/packages/6f/1c/ed8881ad80e7c1ff0e21a1ee73ea75b784524493ecd5e720323f619211c8/gseapy-{{
+    version }}.tar.gz
+  sha256: '{{ sha256 }}'
 
 build:
-  skip: True # [py27]
+  skip: true # [py27]
   entry_points:
     - gseapy = gseapy.__main__:main
-  number: 0
+  number: 1
 
 requirements:
   host:
@@ -23,7 +27,6 @@ requirements:
     - requests
     - lxml
     - html5lib
-
   run:
     - python
     - numpy >=1.13.0
@@ -42,9 +45,9 @@ test:
 
 about:
   home: https://github.com/zqfang/gseapy
-  license: MIT License
-  summary: 'Gene Set Enrichment Analysis in Python'
+  license: MIT
   license_family: MIT
+  summary: Gene Set Enrichment Analysis in Python
 
 extra:
   container:
