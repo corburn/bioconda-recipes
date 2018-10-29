@@ -1,15 +1,18 @@
+{% set version = "1.1" %}
+{% set sha256 = "cb2781d4b2d54da138042de9c4486d273f45282ad5f85c520a6e2087122784fd" %}
+
 package:
   name: grid
-  version: "1.1"
+  version: '{{ version }}'
+
+source:
+  url: https://github.com/ohlab/GRiD/archive/{{ version }}.tar.gz
+  sha256: '{{ sha256 }}'
 
 build:
-  number: 1
+  number: 2
   noarch: generic
-  
-source:
-  url: https://github.com/ohlab/GRiD/archive/1.1.tar.gz
-  sha256: cb2781d4b2d54da138042de9c4486d273f45282ad5f85c520a6e2087122784fd
- 
+
 requirements:
   run:
     - parallel
@@ -30,9 +33,11 @@ requirements:
 test:
   commands:
     - grid -h
-    - update_database -h 
+    - update_database -h
 
 about:
   home: https://github.com/ohlab/GRiD
   license: MIT
-  summary: Growth Rate Index (GRiD) measures bacterial growth rate from reference genomes (including draft quality genomes) and metagenomic bins at ultra-low sequencing coverage (> 0.2x).
+  license_family: MIT
+  summary: Growth Rate Index (GRiD) measures bacterial growth rate from reference genomes (including draft quality genomes)
+    and metagenomic bins at ultra-low sequencing coverage (> 0.2x).
