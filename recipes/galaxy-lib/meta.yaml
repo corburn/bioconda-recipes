@@ -1,17 +1,17 @@
-{% set name = "galaxy-lib" %}
 {% set version = "18.9.1" %}
+{% set sha256 = "ad15ba1820a3df528497156299d86694053e37aa2333ce4053a14f4d30f80d63" %}
 
 package:
-  name: "{{ name|lower }}"
-  version: "{{ version }}"
+  name: galaxy-lib
+  version: '{{ version }}'
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: ad15ba1820a3df528497156299d86694053e37aa2333ce4053a14f4d30f80d63
+  url: https://pypi.io/packages/source/g/galaxy-lib/galaxy-lib-{{ version }}.tar.gz
+  sha256: '{{ sha256 }}'
 
 build:
   noarch: python
-  number: 0
+  number: 1
   entry_points:
     - galaxy-tool-test=galaxy.tools.verify.script:main
     - mulled-build=galaxy.tools.deps.mulled.mulled_build:main
@@ -19,7 +19,7 @@ build:
     - mulled-search=galaxy.tools.deps.mulled.mulled_search:main
     - mulled-build-tool=galaxy.tools.deps.mulled.mulled_build_tool:main
     - mulled-build-files=galaxy.tools.deps.mulled.mulled_build_files:main
-  script: "{{ PYTHON }} -m pip install . --no-deps --ignore-installed -vvv "
+  script: '$PYTHON -m pip install . --no-deps --ignore-installed -vvv '
 
 requirements:
   host:
@@ -71,7 +71,6 @@ test:
 
 about:
   home: https://github.com/galaxyproject/galaxy-lib
-  license: Academic Free License (AFL)
-  summary: Subset of Galaxy (http://galaxyproject.org/) core code base designed to
-    be used a library.
+  license: NOASSERTION
   license_family: Apache
+  summary: Subset of Galaxy (http://galaxyproject.org/) core code base designed to be used a library.
