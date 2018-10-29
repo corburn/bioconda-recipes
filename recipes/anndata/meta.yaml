@@ -1,5 +1,5 @@
-{% set version = "0.6.11" %}
-{% set sha256 = "21bc16ea08c0f46e9c7139ba9762cd26329fe7f30a4c5159f85389c9a3626407" %}
+{% set version = "0.6.12" %}
+{% set sha256 = "e84643f3339c738609c9bd07995d19d049d9eb9e0b81d5ea1ab69c9e4d9aabcd" %}
 
 package:
   name: anndata
