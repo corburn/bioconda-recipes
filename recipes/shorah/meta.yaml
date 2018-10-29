@@ -1,0 +1,47 @@
+{% set version = "1.9.95" %}
+{% set sha256 = "3653d4cfc789525f6d19907af6f8e0231fe58dba8c3d0dd0040d30941de8bfe4" %}
+
+package:
+  name: shorah
+  version: '{{ version }}'
+
+source:
+  url: https://github.com/cbg-ethz/shorah/releases/download/v{{ version }}/shorah-{{ version }}.tar.bz2
+  sha256: '{{ sha256 }}'
+
+build:
+  skip: true # [py3k]
+  number: 0
+
+requirements:
+  build:
+    - '{{ compiler("c") }}'
+    - pkg-config
+  host:
+    - python
+    - gsl
+    - zlib
+  run:
+    - python
+    - samtools
+    - biopython
+    - gsl
+    - zlib
+    - perl
+
+test:
+  commands:
+    # test a few tools
+    - dec.py -h
+    - shorah.py -h
+    - fas2read.pl -h
+
+about:
+  home: https://github.com/cbg-ethz/shorah
+  license: GPL-3.0
+  license_family: GPL
+  summary: The Short Reads Assembly into Haplotypes (ShoRAH) program for inferring viral haplotypes from NGS data
+
+extra:
+  identifiers:
+    - biotools:shorah
