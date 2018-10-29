@@ -1,13 +1,13 @@
-{% set version = "1.1.4" %}
-{% set sha256 = "719eb9331efade6d487f750b131d404121e1b6a0cb5e7382ade7105eaf26c12d" %}
+{% set version = "1.1.5" %}
+{% set sha256 = "6cc607b4c6b45fcc4d95ad7051920aefe74ff33dcd2bc74a358c68d8543fffe3" %}
 
 package:
   name: xyalign
-  version: '{{version}}'
+  version: '{{ version }}'
 
 source:
-  url: https://pypi.io/packages/source/x/xyalign/XYalign-{{version}}.tar.gz
-  sha256: '{{sha256}}'
+  url: https://pypi.io/packages/source/x/xyalign/XYalign-{{ version }}.tar.gz
+  sha256: '{{ sha256 }}'
 
 build:
   noarch: python
@@ -52,7 +52,7 @@ test:
 
 about:
   home: https://github.com/WilsonSayresLab/XYalign
-  license: GPL-3.0
+  license: NOASSERTION
   license_family: GPL
-  summary: Command line tools and python library to infer ploidy, correct for sex
-    chromosome complement, and work with NGS data
+  summary: Command line tools and python library to infer ploidy, correct for sex chromosome complement, and work with NGS
+    data
