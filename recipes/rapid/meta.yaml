@@ -1,12 +1,14 @@
-{% set version = "0.7" %}
+{% set version = "0.6" %}
+{% set sha256 = "46feb6fc7e06e1369a6e2c810629e7782f08830600797dac163023b36485e5a0" %}
 
 package:
   name: rapid
-  version: {{ version }}
+  version: '{{ version }}'
 
 source:
   url: https://github.com/SchulzLab/RAPID/archive/v{{ version }}.tar.gz
-  sha256: 922df6a7dbcd04d72121408e06a491c3946d7fc38a4c980789b311a565b1c59f
+  sha256: '{{ sha256 }}'
+
 build:
   number: 0
 
@@ -41,6 +43,7 @@ requirements:
     - samtools >=0.1.19
     - perl
     - pandoc ==1.17.2
+
 test:
   commands:
     - rapidStats.sh --help
@@ -49,7 +52,10 @@ test:
     - bowtie2 --version
     - R --version
     - perl --version
+
 about:
   home: https://github.com/SchulzLab/RAPID
-  license: GPL2
-  summary: "Read Alignment, Analysis, and Differential Pipeline (RAPID) is a set of tools for the alignment, and analysis of genomic regions with small RNA clusters derived from small RNA sequencing data."
+  license: MIT
+  license_family: MIT
+  summary: Read Alignment, Analysis, and Differential Pipeline (RAPID) is a set of tools for the alignment, and analysis of
+    genomic regions with small RNA clusters derived from small RNA sequencing data.
