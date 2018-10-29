@@ -1,14 +1,17 @@
+{% set version = "0.0.9" %}
+{% set sha256 = "282c8592aa75e68f5611b902cf4eb774facf6d5738ec3e08db192b7b2bea7806" %}
+
 package:
   name: kodoja
-  version: "0.0.9"
+  version: '{{ version }}'
 
 source:
-  url: https://github.com/abaizan/kodoja/archive/kodoja-v0.0.9.tar.gz
-  sha256: 282c8592aa75e68f5611b902cf4eb774facf6d5738ec3e08db192b7b2bea7806
+  url: https://github.com/abaizan/kodoja/archive/kodoja-v{{ version }}.tar.gz
+  sha256: '{{ sha256 }}'
 
 build:
   noarch: python
-  number: 0
+  number: 1
 
 requirements:
   run:
@@ -29,6 +32,7 @@ test:
     - kodoja_retrieve.py --version
 
 about:
-  home: https://github.com/abaizan/kodoja/
+  home: https://github.com/abaizan/kodoja
   license: MIT
-  summary: "Kodoja: identifying viruses from plant RNA sequencing data"
+  license_family: MIT
+  summary: 'Kodoja: identifying viruses from plant RNA sequencing data'
