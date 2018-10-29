@@ -1,23 +1,23 @@
-{% set name = "fusion-inspector" %}
 {% set version = "1.3.1" %}
-{% set build = "1" %}
+{% set sha256 = "425c142fab379d0d400f14a73f198a7aa8e0e523920a122b654fca944628c199" %}
 
 package:
-  name: {{ name }}
-  version: {{ version }}
+  name: fusion-inspector
+  version: '{{ version }}'
 
 source:
-  url: https://github.com/FusionInspector/FusionInspector/releases/download/FusionInspector-v{{ version }}/FusionInspector-v{{ version }}.FULL.tar.gz
-  md5: 8a6dba6110381b39a9ee372d0572ea53
+  url: https://github.com/FusionInspector/FusionInspector/releases/download/FusionInspector-v{{ version }}/FusionInspector-v{{
+    version }}.FULL.tar.gz
+  sha256: '{{ sha256 }}'
 
 build:
-  number: {{ build }}
+  number: 2
   skip: true  # [osx or py3k]
   # The reason for skipping osx is that trinity >=2.4 is not available in the osx channel
   # The python code in FusionInspector runs on python 2.7.
-
 # Trinity is needed for the build, because we have to set its location in an environment variable.
 # We need HTSLIB >=1.3, but was complaining about unpinned. CONDA_HTSLIB is 1.6.
+
 requirements:
   host:
     - python
@@ -44,10 +44,12 @@ test:
     # The following command(s) need to be invoked from where they are located.
     # FusionInspector runs them from that location. These tests invoke them that way.
     # There are quite a few files in the directory. I just run one of them to make sure it is there.
-    - "$PREFIX/share/{{ name }}-{{ version  }}-{{ build }}/util/retrieve_fusion_junction_reads_by_accession.pl --help 2>&1 | grep usage"
+    - $PREFIX/share/fusion-inspector-1.3.1-1/util/retrieve_fusion_junction_reads_by_accession.pl --help 2>&1 | grep usage
 
 about:
-  home: "https://github.com/FusionInspector/FusionInspector"
-  license: BSD-3-Clause
+  home: https://github.com/FusionInspector/FusionInspector
+  license: NOASSERTION
   license_file: LICENSE.txt
-  summary: "FusionInspector is a component of the Trinity Cancer Transcriptome Analysis Toolkit (CTAT). FusionInspector assists in fusion transcript discovery by performing a supervised analysis of fusion predictions, attempting to recover and re-score evidence for such predictions. - https://github.com/FusionInspector/FusionInspector/wiki"
+  summary: FusionInspector is a component of the Trinity Cancer Transcriptome Analysis Toolkit (CTAT). FusionInspector assists
+    in fusion transcript discovery by performing a supervised analysis of fusion predictions, attempting to recover and re-score
+    evidence for such predictions. - https://github.com/FusionInspector/FusionInspector/wiki
