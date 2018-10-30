@@ -1,13 +1,12 @@
-{% set name = "snippy" %}
-{% set version = "4.3.3" %}
-{% set sha256 = "eaee16f915f67180b334c4d7aa3a8588081ec004036651621b1d579f853d0bcd" %}
+{% set version = "4.3.5" %}
+{% set sha256 = "eca58b15459739532c21bc1723efd668aab73e85c2671f6519de67b5d3acb0cf" %}
 
 package:
-  name: '{{ name }}'
+  name: snippy
   version: '{{ version }}'
 
 source:
-  url: 'https://github.com/tseemann/{{ name }}/archive/v{{ version }}.tar.gz'
+  url: https://github.com/tseemann/snippy/archive/v{{ version }}.tar.gz
   sha256: '{{ sha256 }}'
 
 build:
@@ -42,11 +41,11 @@ test:
     - snippy-multi --help
 
 about:
-  home: 'https://github.com/tseemann/{{ name }}'
+  home: https://github.com/tseemann/snippy
   license: GPL-2.0
   license_family: GPL
   summary: Rapid bacterial SNP calling and core genome alignments
 
 extra:
   identifiers:
-    - biotools:{{ name }}
+    - biotools:snippy
