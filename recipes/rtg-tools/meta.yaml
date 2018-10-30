@@ -1,14 +1,16 @@
-{% set version="3.9.1" %}
+{% set version = "3.10" %}
+{% set sha256 = "3c472fc17d14cf2fea7dc13247b4b828900480032af41b5d2b16663f4703f05a" %}
+
 package:
   name: rtg-tools
-  version: {{ version }}
+  version: '{{ version }}'
 
 source:
   url: https://github.com/RealTimeGenomics/rtg-tools/releases/download/{{ version }}/rtg-tools-{{ version }}-nojre.zip
-  md5: e56e9737db69f49ba71575c5450ab5c1
+  sha256: '{{ sha256 }}'
 
 build:
-  number: 1
+  number: 0
   noarch: generic
 
 requirements:
@@ -21,5 +23,6 @@ test:
 
 about:
   home: https://github.com/RealTimeGenomics/rtg-tools
-  license: BSD
+  license: BSD-2-Clause
+  license_family: BSD
   summary: RealTimeGenomics Tools -- Utilities for accurate VCF comparison and manipulation
