@@ -12,7 +12,7 @@ source:
 
 build:
   noarch: python
-  number: 0
+  number: 1
   script: python -m pip install --no-deps --ignore-installed --no-cache-dir -vvv .
 
 requirements:
@@ -31,7 +31,7 @@ test:
 
 about:
   home: https://github.com/sjspielman/pyvolve
-  license: FreeBSD
+  license: NOASSERTION
   license_family: BSD
   summary: 'Pyvolve is an open-source Python module for simulating sequences along a phylogenetic tree according to continuous-time
     Markov models of sequence evolution. Please cite: Spielman, S.J., and Wilke, C.O. (2015). Pyvolve: A Flexible Python Module
