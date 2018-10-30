@@ -1,20 +1,20 @@
-{% set name = "planemo" %}
-{% set version = "0.55.0" %}
+{% set version = "0.56.0" %}
+{% set sha256 = "b790bd73eb6be68e57b986b5149427fba3328808e98ffb2a26e80f02df789736" %}
 
 package:
-  name: "{{ name|lower }}"
-  version: "{{ version }}"
+  name: planemo
+  version: '{{ version }}'
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: fa12d3694c64b3f76c5f0f5199b0dab325ca8c6af78b7026c8092464a0378701
+  url: https://pypi.io/packages/source/p/planemo/planemo-{{ version }}.tar.gz
+  sha256: '{{ sha256 }}'
 
 build:
-  number: 1
+  number: 0
   noarch: python
   entry_points:
     - planemo=planemo.cli:planemo
-  script: "{{ PYTHON }} -m pip install . --no-deps --ignore-installed -vvv "
+  script: '$PYTHON -m pip install . --no-deps --ignore-installed -vvv '
 
 requirements:
   host:
@@ -57,17 +57,16 @@ test:
     - planemo.test
     - planemo.training
     - planemo.xml
-
   commands:
     - planemo --help
 
 about:
   home: https://github.com/galaxyproject/planemo
-  license: Academic Free License (AFL)
-  summary: 'Command-line utilities to assist in building tools for the Galaxy project (http://galaxyproject.org/).'
+  license: NOASSERTION
   license_family: Apache
+  summary: Command-line utilities to assist in building tools for the Galaxy project (http://galaxyproject.org/).
 
 extra:
   container:
     # click requires a Unicode locale
-    extended-base: True
+    extended-base: true
