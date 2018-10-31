@@ -1,17 +1,20 @@
+{% set version = "0.10.3" %}
+{% set sha256 = "e66cd8fa8269bfb75b40453ade387a55d55ba33aac534264043d6d283285d2e4" %}
+
 package:
   name: wtforms-components
-  version: "0.10.0"
+  version: '{{ version }}'
 
 source:
-  url: https://pypi.python.org/packages/source/W/WTForms-Components/WTForms-Components-0.10.0.tar.gz
-  md5: 2b5a5201e679bceb32aecc2099a276e1
+  url: https://pypi.python.org/packages/source/W/WTForms-Components/WTForms-Components-{{ version }}.tar.gz
   patches:
     - setup.py.patch
+  sha256: '{{ sha256 }}'
 
 build:
-  number: 2
+  number: 0
   noarch: python
-  skip: False
+  skip: false
 
 requirements:
   host:
@@ -22,7 +25,6 @@ requirements:
     - validators >=0.5.0
     - intervals >=0.6.0
     - phonenumbers
-
   run:
     - python
     - wtforms >=1.0.4
@@ -38,5 +40,5 @@ test:
 
 about:
   home: https://github.com/kvesteri/wtforms-components
-  license: BSD License
-  summary: 'Additional fields, validators and widgets for WTForms.'
+  license: NOASSERTION
+  summary: Additional fields, validators and widgets for WTForms.
