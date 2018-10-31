@@ -1,5 +1,5 @@
-{% set version = "1.1.1" %}
-{% set sha256 = "682956e3a5a687fbe24354cd7befe515c191b9044f4304ea6bf255096eba45c9" %}
+{% set version = "1.1.2" %}
+{% set sha256 = "c709fc77e5a9e0a97d458034569b09e7a77f49f3f8d3fd0078a10a87a21dc4db" %}
 
 package:
   name: udocker
@@ -7,10 +7,10 @@ package:
 
 source:
   url: https://github.com/indigo-dc/udocker/archive/v{{ version }}.tar.gz
-  sha256: 682956e3a5a687fbe24354cd7befe515c191b9044f4304ea6bf255096eba45c9
+  sha256: '{{ sha256 }}'
 
 build:
-  number: 2
+  number: 0
   skip: true # [not py27 or not linux]
 
 requirements:
